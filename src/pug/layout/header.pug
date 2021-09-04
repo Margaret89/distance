@@ -1,4 +1,79 @@
 header.header
 	.container
 		.row
-			.col-12 header
+			.col-12
+				.header__content
+					.header__logo
+						a(href="/")
+							img(src="assets/img/logo.svg", alt="")
+
+					.header__main
+						.header__info
+							.header__contacts
+								a.header__phone(href="tel:+78123892323")
+									+svg('ic-call','ic-call', '17', '17')
+									|8 (812) 389-23-23
+
+								.msg
+									a.msg__item(href="#")
+										+svg('ic-telegram','ic-telegram', '20', '20')
+									a.msg__item(href="#")
+										+svg('ic-whatsapp','ic-whatsapp', '20', '20')
+									a.msg__item(href="#")
+										+svg('ic-viber','ic-viber', '20', '20')
+
+							.header-address
+								.header-address__icon
+									+svg('ic-metro','ic-metro', '18', '14')
+								.header-address__content
+									b м. Кировский завод  /  м. Приморская
+									br
+									|Россия, Санкт-Петербург, ул. Возрождения, 20
+
+
+							a.btn.btn_border.btn_small(href='#')
+								span.btn__content Версия для слабовидящих
+
+						nav.main-menu
+							ul.main-menu__list
+								-
+									var list=[
+										{
+											text:'О нас',
+											sub:[
+												'Об автошколе',
+												'Наши инструкторы',
+												'Автопарк',
+												'Отзывы',
+												'Новости',
+												'Фото и видео',
+											]
+										},
+										{
+											text:'Категории',
+											sub:[
+												'C',
+												'A',
+												'B',
+												'D',
+											]
+										},
+										{text:'Тарифы и цены'},
+										{text:'Вакансии и партнеры'},
+										{text:'FAQ'},
+										{text:'Расписание'},
+										{text:'Контакты'},
+									]
+								each item in list
+									li.main-menu__item
+										a.main-menu__link(href="#")= item.text
+											if(item.sub)
+												span.main-menu__arr
+													+svg('ic-arrow-down','ic-arrow-down ic-stroke', '11', '11')
+
+
+										if(item.sub)
+											ul.main-menu__sub
+												each sub in item.sub
+													li.main-menu__sub-item
+														a.main-menu__sub-link(href="#")= sub

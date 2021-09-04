@@ -1,0 +1,80 @@
+.header{
+	background: $bg-grad;
+	color: #fff;
+	padding: 20px 0;
+	
+	a{color: #fff;}
+	.icon{fill: #fff;}
+
+	&__content{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__logo{width: 220px;}
+	&__main{width: calc(100% - 250px);}
+
+	&__info{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__contacts{margin-right: 30px;}
+
+	&__phone{
+		display: inline-flex;
+		align-items: center;
+		@include font(normal, bold, 2.2rem, 1.2, #fff);
+		white-space: nowrap;
+		text-decoration: none;
+		transition: color 0.2s ease 0s;
+
+		.icon{
+			flex: 0 0 20px;
+			width: 20px;
+			margin-right: 10px;
+
+
+		}
+	}
+
+	&__phone:hover{color: #51cf08;}
+
+	.msg{margin-top: 3px;}
+	.main-menu{margin-top: 20px;}
+}
+
+.msg{
+	display: flex;
+	align-items: center;
+
+	&__item{
+		text-decoration: none;
+
+		.icon{
+			fill: #fff;
+			transition: fill 0.2s ease 0s;
+		}
+	}
+
+	&__item:not(:last-child){margin-right: 20px;}
+	&__item:hover .icon{fill: #51cf08;}
+}
+
+.header-address{
+	display: inline-flex;
+	margin-right: 30px;
+
+	&__icon{
+		flex: 0 0 18px;
+		width: 18px;
+		margin-right: 12px;
+
+		.icon{vertical-align: top;}
+	}
+
+	&__content{
+		@include font(normal, normal, 1.4rem, 1.5, #fff);
+	}
+}

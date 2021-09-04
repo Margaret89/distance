@@ -1,0 +1,66 @@
+/*-------------- main-menu -----------------*/
+.main-menu{
+	&__list,
+	&__item,
+	&__sub,
+	&__sub-item{
+		@include reset-list;
+	}
+
+	&__list{
+		display: flex;
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+
+	&__item{
+		margin: 0 20px;
+		position: relative;
+		white-space: nowrap;
+	}
+
+	&__link{
+		@include font(normal, bold, 1.6rem, 1.4, #fff);
+		text-decoration: none;
+		transition: color 0.2s ease 0s;
+	}
+
+	&__sub{
+		display: none;
+		width: 200px;
+		background: #fff;
+		border: 2px solid $color-green;
+		border-radius: 5px;
+		padding: 5px 0;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 10;
+	}
+
+	&__sub-item{padding: 5px 10px;}
+
+	&__sub-link{
+		@include font(normal, normal, 1.6rem, 1.4, $color-text);
+		text-decoration: none;
+		transition: color 0.2s ease 0s;
+	}
+
+	&__sub-link:hover{color: $color-green;}
+
+	&__sub a{color: $color-text;}
+
+	&__arr{
+		width: 11px;
+		margin-left: 6px;
+
+		.icon{
+			stroke: #fff;
+			transition: stroke 0.2s ease 0s;
+		}
+	}
+
+	&__item:hover &__link{color: #51cf08;}
+	&__item:hover &__arr .icon{stroke: #51cf08;}
+	&__item:hover &__sub{display: block;}
+}
