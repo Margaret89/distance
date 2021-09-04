@@ -1,4 +1,84 @@
 footer.footer
 	.container
 		.row
-			.col-12 footer
+			.col-6
+				.footer__contacts
+					a.footer__phone(href="tel:+78123892323") 8 (812) 389-23-23
+					.footer__time Ежедневно с 10:00 до 20:00
+
+				.footer__address Россия, г. Санкт-Петербург, ул. Возрождения, 20
+					br
+					+svg('ic-metro','ic-metro', '18', '14')
+					|м. Кировский завод  /  м. Приморская
+
+				.social
+					a.social__item(href="#")
+						+svg('ic-instagram','ic-instagram', '30', '30')
+					a.social__item(href="#")
+						+svg('ic-vk','ic-vk', '30', '17')
+
+				.footer__logo
+					a(href="/")
+						img(src="assets/img/logo.svg", alt="")
+
+				.footer__copyright © 2021 ООО «Автошкола Дистанция»
+
+				.footer__polit
+					a(href="#") Политика конфиденциальности
+
+			.col-6
+				ul.footer-menu
+					-
+						var list=[
+							{
+								text:'О нас',
+								sub:[
+									'Об автошколе',
+									'Наши инструкторы',
+									'Отзывы',
+									'Новости',
+									'Фото и видео',
+								]
+							},
+							{
+								text:'Форма обучения',
+								sub:[
+									'Классическая',
+									'Онлайн',
+								]
+							},
+							{
+								text:'Категории',
+								sub:[
+									'C',
+									'A',
+									'B',
+									'D',
+								]
+							},
+							{
+								text:'Цены',
+								sub:[
+									'Спецпредложения',
+									'Акции',
+									'Цены на категории',
+								]
+							},
+							{
+								text:'Прочее',
+								sub:[
+									'Расписание',
+									'FAQ',
+									'Контакты',
+								]
+							},
+						]
+					each item in list
+						li.footer-menu__item
+							a(href="#").footer-menu__link= item.text
+
+							if(item.sub)
+								ul.footer-menu__sub
+									each sub in item.sub
+										li.footer-menu__sub-item
+											a(href="#").footer-menu__sub-link= sub
