@@ -64,3 +64,20 @@
 	&__item:hover &__arr .icon{stroke: #51cf08;}
 	&__item:hover &__sub{display: block;}
 }
+
+@media (max-width: 1249px) {
+	.main-menu{
+		&__list{flex-wrap: wrap;}
+
+		&__item{
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.main-menu{
+		display: none;
+	}
+}

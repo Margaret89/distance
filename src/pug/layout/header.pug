@@ -5,7 +5,8 @@ header.header
 				.header__content
 					.header__logo
 						a(href="/")
-							img(src="assets/img/logo-white.svg", alt="")
+							img(src="assets/img/logo-white.svg", alt="").d-none.d-lg-inline-block
+							img(src="assets/img/logo-white-mob.svg", alt="").d-lg-none
 
 					.header__main
 						.header__info
@@ -33,6 +34,9 @@ header.header
 
 							a.btn.btn_border.btn_small(href='#')
 								span.btn__content Версия для слабовидящих
+
+							span.ic-hamburger.js-open-menu.d-lg-none
+								span
 
 						nav.main-menu
 							ul.main-menu__list

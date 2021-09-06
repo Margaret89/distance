@@ -9,7 +9,7 @@
 		display: block;
 		width: calc(100% - 370px);
 		height: calc(100% - 120px);
-		background: url(../img/road.png) no-repeat 50% 0;
+		background: url(../img/road.png) no-repeat 0 50%;
 		background-size: contain;
 		position: absolute;
 		@include top-center;

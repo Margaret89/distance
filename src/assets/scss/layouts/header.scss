@@ -69,6 +69,7 @@
 		flex: 0 0 18px;
 		width: 18px;
 		margin-right: 12px;
+		padding-top: 4px;
 
 		.icon{vertical-align: top;}
 	}
@@ -76,4 +77,26 @@
 	&__content{
 		@include font(normal, normal, 1.4rem, 1.5, #fff);
 	}
+}
+
+@media (max-width: 1249px) {
+	.header{
+		&__logo{width: 130px;}
+		&__main{width: calc(100% - 160px);}
+		&__phone{font-size: 1.8rem;}
+	}
+}
+
+@media (max-width: 991px) {
+	.header{
+		.msg,
+		&__info .btn{
+			display: none;
+		}
+
+		&__main{width: auto;}
+		&__phone{display: flex;}
+	}
+
+	.header-address{display: none;}
 }
