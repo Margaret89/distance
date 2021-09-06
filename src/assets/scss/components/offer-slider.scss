@@ -1,0 +1,90 @@
+/*-------------- offer-slider -----------------*/
+.offer-slider-wrap{
+	margin: 80px 0;
+
+	&__top{
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-bottom: 38px;
+
+		h1, .h1{
+			max-width: 250px;
+			margin-right: 30px;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.offer-slider{
+	display: none;
+	&.slick-initialized{display: block;}
+
+	&__item{
+		display: flex!important;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		height: 100%;
+		background: #fff;
+		border-radius: 22px;
+		padding: 60px 60px 0;
+	}
+
+	&__title{
+		font-family: $font-prosto;
+		@include font(normal, normal, 2.6rem, 1.3, #000);
+	}
+
+	&__text{
+		@include font(normal, normal, 1.8rem, 1.5, #000);
+		margin-top: 20px;
+	}
+
+	&__more{
+		display: inline-block;
+		vertical-align: top;
+		margin-top: 28px;
+		text-decoration: none;
+
+		.icon{
+			stroke: #000;
+			transition: stroke 0.2s ease 0s;
+		}
+	}
+
+	&__img{
+		width: 100%;
+		text-align: center;
+		margin-top: -23px;
+
+		img{display: inline-block;}
+	}
+
+	&__more:hover .icon{stroke: $color-green;}
+
+	.slick-slide:nth-child(even) &__item{
+		background: $bg-grad;
+		color: #fff;
+	}
+
+	.slick-slide:nth-child(even) &__title,
+	.slick-slide:nth-child(even) &__text{
+		color: #fff;
+	}
+
+	.slick-slide:nth-child(even) &__more .icon{stroke: #fff;}
+	.slick-slide:nth-child(even) &__more:hover .icon{stroke: #51cf08;}
+	.slick-list{padding-left: calc(50% - 585px);}
+	.slick-track{display: flex;}
+
+	.slick-slide{
+		height: auto;
+		margin: 0 15px;
+		flex: 0 0 570px;
+		transition: opacity 0.2s ease 0s;
+	}
+
+	.slick-slide > div{height: 100%;}
+	.slick-slide[aria-hidden="true"]{opacity: 0.3;}
+}

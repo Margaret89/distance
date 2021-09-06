@@ -1,0 +1,79 @@
+/*-------------- steps -----------------*/
+.steps-wrap{margin: 168px 0 5px;}
+
+.steps{
+	[class^='col-']:nth-child(4n + 2){padding-top: 20px;}
+	[class^='col-']:nth-child(4n + 3){padding-top: 40px;}
+	[class^='col-']:nth-child(4n + 4){padding-top: 60px;}
+
+	&__item{
+		height: calc(100% - 25px);
+		position: relative;
+		margin-bottom: 25px;
+	}
+
+	&__item:before{
+		content: '';
+		display: inline-block;
+		width: 300px;
+		height: 80px;
+		background: url(/assets/img/curve1.svg) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		top: 0;
+		left: 60px;
+	}
+
+	[class^='col-']:nth-child(5) &__item:before,
+	[class^='col-']:nth-child(7) &__item:before,
+	[class^='col-']:nth-child(even) &__item:before{
+		background-image: url(/assets/img/curve2.svg);
+		top: 60px;
+	}
+	
+
+	[class^='col-']:nth-child(6) &__item:before{
+		background-image: url(/assets/img/curve1.svg);
+		top: 0;
+	}
+
+	[class^='col-']:nth-child(4n) &__item:before{display: none;}
+
+	&__top{
+		display: flex;
+		align-items: center;
+	}
+
+	&__icon{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex: 0 0 120px;
+		width: 120px;
+		height: 120px;
+		border-radius: 50%;
+		background: #fff;
+		box-shadow: 0px 16px 22px rgba(0, 0, 0, 0.04);
+		position: relative;
+
+		.icon{fill: $color-green;}
+	}
+
+	&__num{
+		display: inline-flex;
+		align-items: center;
+		height: 60px;
+		font-family: $font-prosto;
+		@include font(normal, normal, 2.6rem, 1, #000);
+		padding: 10px 30px 10px 37px;
+		border: 2px solid #e8e8e8;
+		border-radius: 0 30px 30px 0;
+		margin-left: -20px;
+	}
+
+	&__text{
+		max-width: 200px;
+		@include font(normal, normal, 1.8rem, 1.5, #000);
+		margin-top: 20px;
+	}
+}

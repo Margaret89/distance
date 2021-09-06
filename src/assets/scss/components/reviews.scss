@@ -1,0 +1,74 @@
+/*-------------- reviews -----------------*/
+.reviews-wrap{
+	margin: 110px 0;
+
+	&__more{
+		text-align: center;
+		margin-top: -5px;
+	}
+
+	[class^='col-']:nth-child(4n+2) .review-item__icon{background: #009da7;}
+	[class^='col-']:nth-child(4n+3) .review-item__icon{background: #a7003c;}
+	[class^='col-']:nth-child(4n+4) .review-item__icon{background: #90a700;}
+}
+
+.review-item{
+	padding: 60px;
+	background: #fff;
+	border-radius: 22px;
+	margin-bottom: 40px;
+
+	&__content{
+		@include font(normal, normal, 1.8rem, 1.5, $color-text);
+
+		p:last-child{margin-bottom: 0;}
+	}
+
+	&__data{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 26px;
+		padding-top: 22px;
+		border-top: 1px solid #eee;
+	}
+
+	&__author{
+		display: inline-flex;
+		align-items: center;
+	}
+
+	&__icon{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex: 0 0 60px;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background: $color-green;
+		margin-right: 12px;
+
+		.icon{stroke: #fff;}
+	}
+
+	&__name{
+		@include font(normal, bold, 1.8rem, 1.5, #000);
+	}
+
+	&__city{
+		@include font(normal, normal, 1.4rem, 1.5, #000);
+	}
+
+	&__date{
+		@include font(normal, normal, 1.4rem, 1.5, #a8a8a8);
+
+		.icon{
+			flex: 0 0 22px;
+			width: 22px;
+			vertical-align: top;
+			margin-right: 10px;
+			stroke: #e2e2e2;
+		}
+	}
+}

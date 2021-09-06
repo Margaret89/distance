@@ -1,0 +1,72 @@
+/*-------------- form-learn -----------------*/
+.form-learn-wrap{
+	margin: 120px 0;
+
+	&__content{position: relative;}
+
+	&__content::before{
+		content: '';
+		display: block;
+		width: calc(100% - 370px);
+		height: calc(100% - 120px);
+		background: url(../img/road.png) no-repeat 50% 0;
+		background-size: contain;
+		position: absolute;
+		@include top-center;
+		left: 370px;
+	}
+}
+
+.form-learn{
+	width: 370px;
+	border-radius: 22px;
+	background: #fff;
+
+	&__top{
+		display: flex;
+		align-items: center;
+		background: $bg-grad;
+		padding: 26px 40px;
+		color: #fff;
+		border-radius: 22px 22px 0 0;
+	}
+
+	&__title{
+		@include font(normal, bold, 6.8rem, 1, #fff);
+		margin-right: 30px;
+	}
+
+	&__head{
+		@include font(normal, bold, 2rem, 1.5, #fff);
+	}
+
+	&__note{
+		@include font(normal, normal, 1.4rem, 1.5, #fff);
+		margin-top: 5px;
+	}
+
+	&__content{padding: 40px;}
+
+	&__param{
+		display: flex;
+		margin-bottom: 22px;
+
+		.switch{
+			flex: 0 0 40px;
+			width: 40px;
+			margin-right: 8px;
+		}
+	}
+
+	&__label{
+		@include font(normal, normal, 1.6rem, 1.5, $color-text);
+	}
+
+	&__price{
+		font-family: $font-prosto;
+		@include font(normal, normal, 3.2rem, 1.2, #000);
+		margin-top: 40px;
+	}
+
+	.btn{margin-top: 20px;}
+}

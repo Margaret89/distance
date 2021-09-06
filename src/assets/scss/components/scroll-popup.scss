@@ -1,0 +1,56 @@
+/*-------------- scroll-popup -----------------*/
+.scroll-popup{
+	max-width: 244px;
+	min-height: 226px;
+	padding: 76px 37px 40px;
+	position: fixed;
+	top: 200px;
+	right: 50px;
+	text-align: center;
+	background: url(/assets/img/ellipse.svg) no-repeat 0 0;
+	background-size: contain;
+
+	&.inactive{display: none;}
+
+	&__close{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 55px;
+		height: 55px;
+		border: 2px solid #f2f2f2;
+		border-radius: 50%;
+		position: absolute;
+		top: 8px;
+		right: 17px;
+		transition: all 0.2s ease 0s;
+		cursor: pointer;
+
+		.icon{
+			stroke: #000;
+			transition: stroke 0.2s ease 0s;
+		}
+	}
+
+	&__close:hover{
+		border-color: $color-green;
+		background: $color-green;
+
+		.icon{stroke: #fff;}
+	}
+
+	&__title{
+		@include font(normal, 500, 2rem, 1.4, #000);
+	}
+
+	&__link{
+		display: inline-block;
+		vertical-align: top;
+		@include font(normal, normal, 1.6rem, 1.5, $color-grey);
+		text-decoration: none;
+		margin-top: 10px;
+		transition: color 0.2s ease 0s;
+	}
+
+	&__link:hover{color: $color-green;}
+}

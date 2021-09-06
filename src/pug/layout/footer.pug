@@ -82,3 +82,11 @@ footer.footer
 									each sub in item.sub
 										li.footer-menu__sub-item
 											a(href="#").footer-menu__sub-link= sub
+
+
+.scroll-popup.js-scroll-popup
+	.scroll-popup__close.js-scroll-popup-close
+		+svg('ic-close','ic-close ic-stroke', '15', '15')
+
+	.scroll-popup__title Обучайтесь дома в карантин
+	a(href="").scroll-popup__link Оставить заявку

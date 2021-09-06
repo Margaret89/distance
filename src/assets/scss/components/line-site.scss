@@ -1,0 +1,18 @@
+/*-------------- .line-site -----------------*/
+.line-site{
+	overflow: hidden;
+	padding: 90px 0;
+
+	&__content{
+		display: flex;
+		align-items: center;
+		height: 75px;
+		background: #187b00;
+		@include font(normal, normal, 2.6rem, 1.2, #fff);
+		transform: rotate(-3deg);
+		margin: 0 -15px;
+	}
+
+	&__item{margin-right: 30px;}
+	&_reverse &__content{transform: rotate(3deg);}
+}

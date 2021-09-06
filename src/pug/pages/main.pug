@@ -4,9 +4,475 @@ block variables
 	- var title = 'Главная';
 
 block content
-	section
+	section.top-ban
+		.container
+			.row
+				.col-7
+					.top-ban__title Дистанция — автошкола в&nbsp;СПб за 18 900 рублей
+
+	section.type-lern
 		.container
 			.row
 				.col-12
-					h1 содержание
+					.type-lern__list
+						-
+							var list=[
+								{
+									icon:'ic-presentation',
+									title:'Классическое обучение',
+									sub:[
+										'Изучение теории проходит в просторных и современных классах, оборудованных мультимедийной техникой',
+										'Удобное расписание',
+										'Индивидуальный подход к каждому ученику',
+										'Безопасность',
+										'Практика со своим инструктором',
+										'Обучение в автошколе 3,5 месяца',
+									],
+									btn:'Начать обучение'
+								},
+								{
+									icon:'ic-online',
+									title:'Онлайн обучение',
+									sub:[
+										'Увлекательная интерактивная программа',
+										'Регистрация в личном кабинете',
+										'Онлайн поддержка',
+										'Практика со своим инструктором',
+										'Обучение в автошколе 3,5 месяца',
+									],
+									btn:'Оставить заявку'
+								}
+							]
+						each item in list
+							.type-lern-item
+								.type-lern-item__content
+									.type-lern-item__top
+										.type-lern-item__icon
+											+svg(item.icon, item.icon, '50', '50')
+										.type-lern-item__title= item.title
+
+									.type-lern-item__info
+										ul
+											each sub in item.sub
+												li= sub
+												
+
+								a.btn.btn_border(href='#')
+									span.btn__content= item.btn
+
+	section.form-learn-wrap
+		.container
+			.row
+				.col-12
+					.h1 Стоимость обучения
+
+					.form-learn-wrap__content
+						form.form-learn
+							.form-learn__top
+								.form-learn__title B
+								.form-learn__info
+									.form-learn__head Экспресс
+									.form-learn__note МКПП / АКПП
+
+							.form-learn__content
+								-
+									var list=[
+										{text:'Обучение теории дистанционно'},
+										{text:'Обучение теории в классе', status:'active'},
+										{text:'Практика 16 занятий', status:'active'},
+										{text:'Практика 24 занятий'},
+										{text:'Практика 40 занятий'},
+										{text:'Восстановление навыков вождения 15 часов'},
+									]
+								each item, index in list
+									.form-learn__param
+										.switch
+											if(item.status)
+												input(type="checkbox", id="switch"+index, checked="checked")
+											else
+												input(type="checkbox", id="switch"+index)
+											label.switch__content(for="switch"+index)
+												.switch__marker
+										
+										.form-learn__label= item.text
+								
+								.form-learn__price 18 900 &#8381;
+
+								a.btn.btn_border(href='#')
+									span.btn__content Записаться
+
+	section.offer-slider-wrap
+		.container
+			.row
+				.col-12
+					.offer-slider-wrap__top
+						.h1 Акции и&nbsp;спецпредложения
+
+						.slider-arr.js-offer-slider-arr.d-none.d-md-inline-flex
+				
+		.offer-slider.js-offer-slider
+			-
+				var list=[
+					{title:'Приведи друга', text:'Приведи друга и получи скидку 4000 рублей на двоих', img:'piggy-bank.png'},
+					{title:'Студенческий', text:'Предъяви студенческий и получи скидку 1000 рублей на обучение', img:'girl.png'},
+					{title:'Приведи друга', text:'Приведи друга и получи скидку 4000 рублей на двоих', img:'piggy-bank.png'},
+					{title:'Студенческий', text:'Предъяви студенческий и получи скидку 1000 рублей на обучение', img:'girl.png'},
+					{title:'Приведи друга', text:'Приведи друга и получи скидку 4000 рублей на двоих', img:'piggy-bank.png'},
+					{title:'Студенческий', text:'Предъяви студенческий и получи скидку 1000 рублей на обучение', img:'girl.png'},
+					{title:'Приведи друга', text:'Приведи друга и получи скидку 4000 рублей на двоих', img:'piggy-bank.png'},
+					{title:'Студенческий', text:'Предъяви студенческий и получи скидку 1000 рублей на обучение', img:'girl.png'},
+				]
+			each item in list
+				.offer-slider__item
+					.offer-slider__content
+						.offer-slider__title= item.title
+
+						.offer-slider__text= item.text
+
+						a(href="#").offer-slider__more
+							+svg('ic-arr-right','ic-arr-right ic-stroke', '42', '20')
 					
+					.offer-slider__img
+						img(src="assets/img/"+item.img, alt="")
+
+	section.about
+		.container
+			.row
+				.col-12
+					.h1 О нас
+
+				.col-6
+					.about__content
+						p Наши клиенты, пройдя обучение, становятся грамотными и ответственными участниками дорожного движения, которые соблюдают все правила дорожного движения и обеспечивают безопасность на проезжей части и за ее пределами.
+
+						p Автошкола имеет государственную лицензию, на основании которой проводит курсы подготовки водителей категории "А","А1" (мотоциклы), категории "В"(легковые автомобили с МКПП или АКПП), категории "С" (грузовые автомобили) и организует сдачу экзамена в ГИБДД на получение водительского удостоверения.
+
+						p За годы существования школы мы стали большим коллективом - автошколой с двадцатью филиалами. У нас работают более 100 высококвалифицированных инструкторов по вождению и более 20 опытных преподавателей теоретического курса.
+
+						a.btn.btn_border(href='#')
+							span.btn__content Об автошколе
+
+				.col-6
+					.about-slider.js-about-slider
+						-
+							var list=[
+								{img:'about1.jpg'},
+								{img:'about2.jpg'},
+								{img:'about3.jpg'},
+							]
+						each item in list
+							a(href='assets/img/'+item.img, data-fancybox='about').about-slider__item
+								img(src='assets/img/'+item.img, alt='')
+								
+
+	section.line-site
+		.line-site__content
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+
+	section.product-list
+		.container
+			.row
+				-
+					var list=[
+						{
+							img:'car1.jpg',
+							title:'Ford Focus',
+							params:[
+								{label:'Тип кузова', val:'Хэтчбек'},
+								{label:'Год выпуска', val:'2011'},
+								{label:'Пробег', val:'170 000 км'},
+								{label:'Коробка передач', val:'Механика'},
+								{label:'Руль', val:'Левый'},
+								{label:'Объем двигателя', val:'1,6 л'},
+							]
+						},
+						{
+							img:'car2.jpg',
+							title:'Volkswagen Jetta',
+							params:[
+								{label:'Тип кузова', val:'Хэтчбек'},
+								{label:'Год выпуска', val:'2011'},
+								{label:'Пробег', val:'170 000 км'},
+								{label:'Коробка передач', val:'Механика'},
+								{label:'Руль', val:'Левый'},
+								{label:'Объем двигателя', val:'1,6 л'},
+							]
+						},
+						{
+							img:'car3.jpg',
+							title:'Citroen C4',
+							params:[
+								{label:'Тип кузова', val:'Хэтчбек'},
+								{label:'Год выпуска', val:'2011'},
+								{label:'Пробег', val:'170 000 км'},
+								{label:'Коробка передач', val:'Механика'},
+								{label:'Руль', val:'Левый'},
+								{label:'Объем двигателя', val:'1,6 л'},
+							]
+						},
+					]
+				each item in list
+					.col-4
+						.product-card
+							.product-card__img-wrap
+								.product-card__img(style="background-image: url(assets/img/"+item.img+")")
+
+							.product-card__title= item.title
+
+							.product-card-param
+								each param in item.params
+									.product-card-param__item
+										.product-card-param__label= param.label
+										.product-card-param__val= param.val
+
+				.col-12
+					.product-list__more
+						a.btn.btn_border(href='#')
+							span.btn__content Все автомобили
+				
+
+	section.school-slider-wrap
+		.container
+			.row
+				.col-12
+					.h1.text-center Автодром
+
+					.school-slider.js-school-slider
+						-
+							var list=[
+								{img:'autodrom1.jpg'},
+								{img:'autodrom2.jpg'},
+								{img:'autodrom3.jpg'},
+							]
+						each item in list
+							a(href='assets/img/'+item.img, data-fancybox='autodrom').school-slider__item
+								img(src='assets/img/'+item.img, alt="")
+
+					.school-slider-wrap__more
+						a.btn.btn_border(href='#')
+							span.btn__content Больше фото
+
+	section.instructors-slider-wrap
+		.container
+			.row
+				.col-12
+					.instructors-slider-wrap__top
+						.h1 Инструкторы
+						.slider-arr.js-instructors-slider-arr
+
+					.instructors-slider.js-instructors-slider
+						-
+							var list=[
+								{img:'instructor1.jpg', name:'Павлов Андрей', experience:'6', students:'1200', percent:'99%'},
+								{img:'instructor2.jpg', name:'Трофимов Александр', experience:'6', students:'1200', percent:'99%'},
+								{img:'instructor2.jpg', name:'Трофимов Александр', experience:'6', students:'1200', percent:'99%'},
+								{img:'instructor1.jpg', name:'Павлов Андрей', experience:'6', students:'1200', percent:'99%'},
+								{img:'instructor1.jpg', name:'Павлов Андрей', experience:'6', students:'1200', percent:'99%'},
+								{img:'instructor2.jpg', name:'Трофимов Александр', experience:'6', students:'1200', percent:'99%'},
+							]
+						each item in list
+							.instructors-slider__item
+								.instructors-slider__img(style="background-image: url(assets/img/"+item.img+")")
+
+								.instructors-slider__content
+									.instructors-slider__name= item.name
+
+									.instructors-slider__param Стаж работы: 
+										b=item.experience
+										| 
+										| лет
+
+									.instructors-slider__param Отучил: 
+										b=item.students
+										| 
+										| учеников
+
+									.instructors-slider__param Сдача вождения: 
+										b=item.experience
+
+	section.steps-wrap
+		.container
+			.row
+				.col-12
+					.h1 Как проходит обучение
+
+			.steps
+				.row
+					-
+						var list=[
+							{icon:'ic-resume', num:'1', text:'Заявка на обучение'},
+							{icon:'ic-path', num:'2', text:'Выбор изучения теории очно или дистанционно'},
+							{icon:'ic-contract', num:'3', text:'Заключение договора'},
+							{icon:'ic-read', num:'4', text:'Начало изучения теории'},
+							{icon:'ic-steering-wheel', num:'5', text:'Вождение с инструктором и параллельное изучение теории'},
+							{icon:'ic-exam', num:'6', text:'Сдача внутренних экзаменов'},
+							{icon:'ic-policeman', num:'7', text:'Сдача экзаменов в ГИБДД'},
+							{icon:'ic-driving-license', num:'8', text:'Выдача водительского удостоверения'},
+						]
+					each item in list
+						.col-3
+							.steps__item
+								.steps__top
+									.steps__icon
+										+svg(item.icon, item.icon, '50', '50')
+									.steps__num= item.num
+
+								.steps__text= item.text
+
+	section.line-site.line-site_reverse
+		.line-site__content
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+			.line-site__item Автошкола
+			.line-site__item Дистанция
+
+
+	section.news-wrap
+		.container
+			.row
+				.col-12
+					.h1 Новости
+
+			.row
+				-
+					var list=[
+						{img:'news1.jpg', title:'Сдача экзаменов ГИБДД по новому регламенту', date:'28.09.2021', size:'big'},
+						{img:'news2.jpg', title:'Появилось новое задание  — парковка передом...', date:'28.09.2021'},
+						{img:'news3.jpg', title:'На площадке при перемещении нужно включать поворотники', date:'28.09.2021'}
+					]
+				each item in list
+					div(class=item.size?'col-6':'col-3')
+						.news-item
+							a(href="#").news-item__img-wrap
+								.news-item__img(style="background-image: url(assets/img/"+item.img+")")
+
+							.news-item__title
+								a(href="#")= item.title
+
+							.news-item__date= item.date
+
+							a(href="#").news-item__more
+									+svg('ic-arr-right','ic-arr-right ic-stroke', '42', '20')
+
+	section.reviews-wrap
+		.container
+			.row
+				.col-12
+					.h1 Отзывы учеников
+
+			.row
+				-
+					var list=[
+						{
+							text:[
+								'“Хочеться выразить огромную благодарность всему коллективу автошколы «Дистанция». Отдельная благодарность инструктору Евгений Ф. который подробно и доступно объяснял информацию, за его терпение, профессионализм, спокойствие.',
+								'Спасибо за знания и опыт! Замечательная автошкола. Сотрудники настоящие профессоналы! Школа оправдала все мои ожидания.”'
+							],
+							name:'Сергей',
+							date:'26.02.2021',
+							city:'Санкт-Петербург'
+						},
+						{
+							text:[
+								'“Сначала переживал когда искал автошколу, но когда все таки начал обучение в автошколе Дистанция — ничуть не пожалел.',
+								'Постоянная поддержка со стороны автошколы, простое обучение и грамотный инструктор вам точно будут обеспечены.”',
+							],
+							name:'Александр',
+							date:'26.02.2021',
+							city:'Москва'
+						},
+					]
+				each item in list
+					.col-6
+						.review-item
+							.review-item__content
+								each text in item.text
+									p= text
+
+							.review-item__data
+								.review-item__author
+									.review-item__icon
+										+svg('ic-user','ic-user ic-stroke', '14', '18')
+
+									.review-item__info
+										.review-item__name= item.name
+										.review-item__city= item.city
+								
+								.review-item__date
+									+svg('ic-calendar','ic-calendar ic-stroke', '20', '20')
+									= item.date
+			.row
+				.col-12
+					.reviews-wrap__more
+						a.btn.btn_border(href='#')
+							span.btn__content Больше отзывов
+
+	section.company-wrap
+		.container
+			.row
+				.col-6
+					.h1 Автошкола в 
+						nobr Санкт-Петербурге
+
+			.row
+				.col-12.clearfix
+					.img-float
+						img(src="assets/img/city.jpg", alt="")
+
+					p Наши клиенты, пройдя обучение, становятся грамотными и ответственными участниками дорожного движения, которые соблюдают все правила дорожного движения и обеспечивают безопасность на проезжей части и за ее пределами.
+					p Автошкола имеет государственную лицензию, на основании которой проводит курсы подготовки водителей категории "А","А1" (мотоциклы), категории "В"(легковые автомобили с МКПП или АКПП), категории "С" (грузовые автомобили) и организует сдачу экзамена в ГИБДД на получение водительского удостоверения.
+
+					.clear
+
+					.img-float.img-float_right
+						img(src="assets/img/forest.jpg", alt="")
+
+					h3 Дистанционное образование
+					p Автошкола имеет государственную лицензию, на основании которой проводит курсы подготовки водителей категории "А","А1" (мотоциклы), категории "В"(легковые автомобили с МКПП или АКПП), категории "С" (грузовые автомобили) и организует сдачу экзамена в ГИБДД на получение водительского удостоверения.
+
+					h4 Тест-драйв авто совместно с инструктором
+					p Наши клиенты, пройдя обучение, становятся грамотными и ответственными участниками дорожного движения, которые соблюдают все правила дорожного движения и обеспечивают безопасность на проезжей части и за ее пределами.
+					p За годы существования школы мы стали большим коллективом - автошколой с двадцатью филиалами. У нас работают более 100 высококвалифицированных инструкторов по вождению и более 20 опытных преподавателей теоретического курса.

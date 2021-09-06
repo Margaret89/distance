@@ -1,0 +1,29 @@
+/*-------------- school-slider -----------------*/
+.school-slider-wrap{
+	margin: 120px 0;
+
+	&__more{
+		text-align: center;
+		margin-top: 40px;
+	}
+}
+
+.school-slider{
+	display: none;
+	&.slick-initialized{display: block;}
+	
+	&__item{
+		border-radius: 12px;
+		overflow: hidden;
+		vertical-align: top;
+	}
+
+	.btn-arr{
+		position: absolute;
+		@include top-center;
+		z-index: 10;
+	}
+
+	.btn-arr_left{left: -30px;}
+	.btn-arr_right{right: -30px;}
+}
