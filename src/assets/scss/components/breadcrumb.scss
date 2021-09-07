@@ -1,0 +1,34 @@
+/*-------------- breadcrumb -----------------*/
+.breadcrumb{
+	&,
+	&__item{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	&{
+		display: flex;
+		flex-wrap: wrap;
+		margin: 40px 0 20px;
+	}
+
+	&__item{
+		@include font(normal, normal, 1.4rem, 1.4, #000);
+		text-decoration: none;
+	}
+
+	&__item a{
+		color: $color-grey;
+		text-decoration: none;
+		transition: color 0.2s ease 0s;
+	}
+
+	&__item a:hover{color: $color-green}
+
+	&__item:not(:last-child):after{
+		content: '»';
+		margin: 0 8px;
+		color: $color-grey;
+	}
+}
