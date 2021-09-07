@@ -1,0 +1,63 @@
+/*-------------- instructors -----------------*/
+.instructors{
+	&__list{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+
+	&__item{
+		width: calc(33.33% - 30px);
+		border-radius: 22px;
+		background: #fff;
+		padding: 60px 60px 50px;
+		margin: 0 15px 30px;
+		text-align: center;
+	}
+
+	&__img{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 140px;
+		height: 140px;
+		border-radius: 50%;
+		margin: 0 auto 20px;
+	}
+
+	&__name{
+		@include font(normal, 500, 2.2rem, 1.3, #000);
+		margin-bottom: 18px;
+	}
+
+	&__param{
+		@include font(normal, normal, 1.6rem, 1.5, $color-text);
+		padding: 10px 0;
+	}
+
+	&__param:not(:last-child){border-bottom: 1px solid #eee;}
+	.rating{margin-bottom: 18px;}
+}
+
+@media (max-width: 1249px) {
+	.instructors{
+		&__item{padding: 40px 40px 30px;}
+	}
+}
+
+@media (max-width: 991px) {
+	.instructors{
+		&__item{width: calc(50% - 30px);}
+	}
+}
+
+@media (max-width: 767px) {
+	.instructors{
+		&__item{
+			width: calc(100% - 30px);
+			padding: 30px 30px 20px;
+		}
+	}
+}

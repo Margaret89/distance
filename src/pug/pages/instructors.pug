@@ -1,0 +1,51 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Наши инструкторы';
+	- var h1 = 'Наши инструкторы';
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная страница'},
+			{href:'#',name:'Наши инструкторы'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	section.instructors
+		.container
+			.row
+				.col-12
+					.instructors__list
+						-
+							var list=[
+								{img:'instr1.jpg', name:'Павлов Андрей', experience:'6', students:'1200', percent:'99%'},
+								{img:'instr2.jpg', name:'Трофимов Александр', experience:'6', students:'1200', percent:'99%'},
+								{img:'instr3.jpg', name:'Иванов Алексей', experience:'6', students:'1200', percent:'99%'},
+								{img:'instr4.jpg', name:'Бедняков Андрей', experience:'6', students:'1200', percent:'99%'},
+								{img:'instr5.jpg', name:'Ивлеев Александр', experience:'6', students:'1200', percent:'99%'},
+							]
+						each item in list
+							.instructors__item
+								.instructors__img(style="background-image: url(assets/img/"+item.img+")")
+
+								.instructors__content
+									.rating
+										.rating__content(style="width:60%")
+
+									.instructors__name= item.name
+
+									.instructors__param Стаж работы: 
+										b=item.experience
+										| 
+										| лет
+
+									.instructors__param Отучил: 
+										b=item.students
+										| 
+										| учеников
+
+									.instructors__param Сдача вождения: 
+										b=item.percent
