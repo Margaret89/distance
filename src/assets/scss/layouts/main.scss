@@ -193,15 +193,20 @@ button.btn_small{
 
 .img-float{
 	max-width: 50%;
-	border-radius: 12px;
 	margin: 0 60px 60px 0;
 	float: left;
-	overflow: hidden;
+
+	img{border-radius: 12px;}
 
 	&_right{
 		float: right;
 		margin: 0 0 60px 60px;
 	}
+}
+
+.img-radius{
+	margin: 60px 0;
+	img{border-radius: 12px;}
 }
 
 .clear{clear: both;}
@@ -213,6 +218,8 @@ button.btn_small{
 		margin: 0 40px 40px 0;
 		&_right{margin: 0 0 40px 40px;}
 	}
+
+	.img-radius{margin: 40px 0;}
 
 	main{padding-bottom: 80px;}
 	.last-elem{margin-bottom: -80px;}
@@ -258,4 +265,5 @@ button.btn_small{
 	}
 
 	.img-float:first-child{margin-top: 0;}
+	.img-radius{margin: 20px 0;}
 }
