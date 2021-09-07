@@ -12,8 +12,10 @@
 }
 
 .about-slider{
-	position: relative;
 	display: none;
+	max-width: 570px;
+	position: relative;
+
 	&.slick-initialized{display: block;}
 
 	&::after{
@@ -43,4 +45,32 @@
 
 	.btn-arr_left{left: -30px;}
 	.btn-arr_right{right: -30px;}
+}
+
+@media (max-width: 991px) {
+	.about{
+		margin-top: 80px;
+		&__content{padding-right: 0;}
+	}
+
+	.about-slider{margin: 60px auto 0;}
+}
+
+@media (max-width: 767px) {
+	.about{
+		margin-top: 137px;
+		overflow: visible;
+	}
+
+	.about-slider{
+		margin-left: -15px;
+		margin-right: -15px;
+
+		&::after{display: none;}
+
+		&__item{
+			vertical-align: top;
+			border-radius: 0;
+		}
+	}
 }

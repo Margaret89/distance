@@ -7,7 +7,7 @@ block content
 	section.top-ban
 		.container
 			.row
-				.col-7
+				.col-md-7
 					.top-ban__title Дистанция — автошкола в&nbsp;СПб за 18 900 рублей
 
 	section.type-lern
@@ -106,7 +106,7 @@ block content
 			.row
 				.col-12
 					.offer-slider-wrap__top
-						.h1 Акции и&nbsp;спецпредложения
+						.h1 Акции и спецпредложения
 
 						.slider-arr.js-offer-slider-arr.d-none.d-md-inline-flex
 				
@@ -141,7 +141,7 @@ block content
 				.col-12
 					.h1 О нас
 
-				.col-6
+				.col-lg-6
 					.about__content
 						p Наши клиенты, пройдя обучение, становятся грамотными и ответственными участниками дорожного движения, которые соблюдают все правила дорожного движения и обеспечивают безопасность на проезжей части и за ее пределами.
 
@@ -152,7 +152,7 @@ block content
 						a.btn.btn_border(href='#')
 							span.btn__content Об автошколе
 
-				.col-6
+				.col-lg-6
 					.about-slider.js-about-slider
 						-
 							var list=[
@@ -195,6 +195,9 @@ block content
 	section.product-list
 		.container
 			.row
+				.col-12
+					.h1.text-center Автопарк
+			.row
 				-
 					var list=[
 						{
@@ -234,8 +237,8 @@ block content
 							]
 						},
 					]
-				each item in list
-					.col-4
+				each item, index in list
+					.col-md-4(class=index>0?'d-none d-md-block':'')
 						.product-card
 							.product-card__img-wrap
 								.product-card__img(style="background-image: url(assets/img/"+item.img+")")
@@ -281,7 +284,7 @@ block content
 				.col-12
 					.instructors-slider-wrap__top
 						.h1 Инструкторы
-						.slider-arr.js-instructors-slider-arr
+						.slider-arr.js-instructors-slider-arr.d-none.d-md-inline-flex
 
 					.instructors-slider.js-instructors-slider
 						-
@@ -298,6 +301,9 @@ block content
 								.instructors-slider__img(style="background-image: url(assets/img/"+item.img+")")
 
 								.instructors-slider__content
+									.rating.d-md-none
+										.rating__content(style="width:60%")
+
 									.instructors-slider__name= item.name
 
 									.instructors-slider__param Стаж работы: 
@@ -333,7 +339,7 @@ block content
 							{icon:'ic-driving-license', num:'8', text:'Выдача водительского удостоверения'},
 						]
 					each item in list
-						.col-3
+						.col-md-4.col-lg-3
 							.steps__item
 								.steps__top
 									.steps__icon
@@ -384,7 +390,7 @@ block content
 						{img:'news3.jpg', title:'На площадке при перемещении нужно включать поворотники', date:'28.09.2021'}
 					]
 				each item in list
-					div(class=item.size?'col-6':'col-3')
+					div(class=item.size?'col-md-6':'col-md-6 col-lg-3')
 						.news-item
 							a(href="#").news-item__img-wrap
 								.news-item__img(style="background-image: url(assets/img/"+item.img+")")
@@ -425,8 +431,8 @@ block content
 							city:'Москва'
 						},
 					]
-				each item in list
-					.col-6
+				each item, index in list
+					.col-md-6(class=index>0?'d-none d-md-block':'')
 						.review-item
 							.review-item__content
 								each text in item.text
@@ -453,7 +459,7 @@ block content
 	section.company-wrap
 		.container
 			.row
-				.col-6
+				.col-md-6
 					.h1 Автошкола в 
 						nobr Санкт-Петербурге
 

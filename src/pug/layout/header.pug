@@ -13,7 +13,7 @@ header.header
 							.header__contacts
 								a.header__phone(href="tel:+78123892323")
 									+svg('ic-call','ic-call', '17', '17')
-									|8 (812) 389-23-23
+									span 8 (812) 389-23-23
 
 								.msg
 									a.msg__item(href="#")
@@ -38,7 +38,7 @@ header.header
 							span.ic-hamburger.js-open-menu.d-lg-none
 								span
 
-						nav.main-menu
+						nav.main-menu.js-main-menu
 							ul.main-menu__list
 								-
 									var list=[
@@ -69,15 +69,15 @@ header.header
 										{text:'Контакты'},
 									]
 								each item in list
-									li.main-menu__item
+									li.main-menu__item.js-main-menu-item
 										a.main-menu__link(href="#")= item.text
 											if(item.sub)
-												span.main-menu__arr
+												span.main-menu__arr.js-main-menu-arr
 													+svg('ic-arrow-down','ic-arrow-down ic-stroke', '11', '11')
 
 
 										if(item.sub)
-											ul.main-menu__sub
+											ul.main-menu__sub.js-main-menu-sub
 												each sub in item.sub
 													li.main-menu__sub-item
 														a.main-menu__sub-link(href="#")= sub

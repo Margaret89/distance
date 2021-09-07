@@ -75,3 +75,7 @@ button.btn-arr:hover{
 		background: $color-green;
 	}
 }
+
+@media (max-width: 767px) {
+	.slick-dots{bottom: -47px;}
+}

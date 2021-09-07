@@ -72,3 +72,32 @@
 		}
 	}
 }
+
+@media (max-width: 991px) {
+	.reviews-wrap{margin: 70px 0;}
+	.review-item{padding: 40px;}
+}
+
+@media (max-width: 767px) {
+	.reviews-wrap{
+		&__more{
+			text-align: left;
+			margin-top: -10px;
+		}
+	}
+
+	.review-item{
+		padding: 20px;
+		&__content{font-size: 1.6rem;}
+
+		&__data{
+			display: block;
+			padding-top: 26px;
+		}
+
+		&__date{
+			margin-top: 30px;
+			text-align: right;
+		}
+	}
+}

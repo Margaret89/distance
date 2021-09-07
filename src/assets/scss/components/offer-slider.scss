@@ -95,3 +95,37 @@
 		.slick-slide{flex: 0 0 450px;}
 	}
 }
+
+@media (max-width: 991px) {
+	.offer-slider{
+		.slick-list{padding-left: 0;}
+		.slick-slide{flex: 0 0 auto;}
+		&__item{padding: 40px 40px 0;}
+	}
+}
+
+@media (max-width: 767px) {
+	.offer-slider-wrap{
+		margin: 100px 0;
+
+		&__top{
+			margin-bottom: 32px;
+
+			h1, .h1{
+				max-width: none;
+				margin-right: 0;
+			}
+		}
+	}
+
+	.offer-slider{
+		&__title{font-size: 2rem;}
+		&__text{font-size: 1.6rem;}
+		&__img img{max-height: 240px;}
+
+		&__more{
+			width: 30px;
+			margin-top: 22px;
+		}
+	}
+}

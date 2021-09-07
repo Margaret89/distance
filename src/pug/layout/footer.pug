@@ -1,7 +1,7 @@
 footer.footer
 	.container
 		.row
-			.col-6
+			.col-md-6
 				.footer__contacts
 					a.footer__phone(href="tel:+78123892323") 8 (812) 389-23-23
 					.footer__time Ежедневно с 10:00 до 20:00
@@ -17,16 +17,17 @@ footer.footer
 					a.social__item(href="#")
 						+svg('ic-vk','ic-vk', '30', '17')
 
-				.footer__logo
-					a(href="/")
-						img(src="assets/img/logo.svg", alt="")
+				.d-none.d-md-block
+					.footer__logo
+						a(href="/")
+							img(src="assets/img/logo.svg", alt="")
 
-				.footer__copyright © 2021 ООО «Автошкола Дистанция»
+					.footer__copyright © 2021 ООО «Автошкола Дистанция»
 
-				.footer__polit
-					a(href="#") Политика конфиденциальности
+					.footer__polit
+						a(href="#") Политика конфиденциальности
 
-			.col-6
+			.col-md-6
 				ul.footer-menu
 					-
 						var list=[
@@ -83,10 +84,48 @@ footer.footer
 										li.footer-menu__sub-item
 											a(href="#").footer-menu__sub-link= sub
 
+			.col-12.d-md-none
+				.footer__logo
+					a(href="/")
+						img(src="assets/img/logo.svg", alt="")
+
+				.footer__copyright © 2021 ООО «Автошкола Дистанция»
+
+				.footer__polit
+					a(href="#") Политика конфиденциальности
 
 .scroll-popup.js-scroll-popup
 	.scroll-popup__close.js-scroll-popup-close
 		+svg('ic-close','ic-close ic-stroke', '15', '15')
 
 	.scroll-popup__title Обучайтесь дома в карантин
-	a(href="").scroll-popup__link Оставить заявку
+	a(data-fancybox='', data-src='#feedback-form', href='javascript:;').scroll-popup__link Оставить заявку
+
+
+<!-- Форма Обратной связи' -->
+#feedback-form.popup-form(style='display: none;')
+	form.form-site.js-valid-form(method='get')
+		.h3 Оставить заявку
+
+		.form-site__content
+			.form-site__item
+				input(type='text', placeholder='Ваше имя', required='required')
+
+			.form-site__item
+				input.js-phone(type='text', placeholder='Ваш телефон', data-icon='phone', required='required')
+
+		.form-site__polit
+			.input-check
+				input#check-polit(type='checkbox', checked="")
+				label.input-check__label(for='check-polit')
+					span.input-check__mark
+						+svg('ic-tick','ic-tick ic-stroke', '10', '8')
+					span.input-check__text Я согласен на обработку 
+						a(href="#") моих персональных данных
+
+		button.btn.btn_border(type='submit')
+			span.btn__content Отправить
+
+<!-- Попап об успешной отправки письма -->
+#msg-success.success-alert(style='display: none;')
+	.success-alert__text Ваше сообщение успешно отправлено!

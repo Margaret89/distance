@@ -1,0 +1,44 @@
+/*-------------- input-check -----------------*/
+.input-check{
+	&__label{
+		display: flex;
+		cursor: pointer;
+		position: relative;
+		@include font(normal, normal, 1.4rem, 1.4, $color-text);
+		margin: 0;
+
+		a{
+			color: $color-grey;
+			text-decoration: none;
+			transition: color 0.2s ease 0s;
+		}
+
+		a:hover{color: $color-green;}
+	}
+
+	input[type=checkbox]{display: none;}
+
+	&__mark{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		vertical-align: top;
+		flex: 0 0 20px;
+		width: 20px;
+		height: 20px;
+		border: 1px solid $color-green;
+		border-radius: 50%;
+		background: #fff;
+		position: relative;
+
+		.icon{
+			display: none;
+			stroke: #fff;
+		}
+	}
+
+	&__text{margin-left: 10px;}
+
+	input[type=checkbox]:checked + &__label &__mark{background: $color-green;}
+	input[type=checkbox]:checked + &__label &__mark .icon{display: inline-block;}
+}

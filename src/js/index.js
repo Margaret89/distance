@@ -12,37 +12,33 @@ import {$} from './common';
 // offer slider
 if($('.js-offer-slider').length){
 	$('.js-offer-slider').slick({
-		// centerMode: true,
-		// centerPadding: 'calc(50% - 585px)',
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		variableWidth: true,
+		dots: false,
 		appendArrows: $('.js-offer-slider-arr'),
 		prevArrow: '<button id="prev" type="button" class="btn-arr"><svg class="icon ic-arrow-left ic-stroke" width="10" height="17"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-left"></use></svg></button>',
 		nextArrow: '<button id="next" type="button" class="btn-arr"><svg class="icon ic-arrow-right ic-stroke" width="10" height="17"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-right"></use></svg></button>',
-		// responsive: [
-		// 	{
-		// 		breakpoint: 1240,
-		// 		settings: {
-		// 			centerPadding: 'calc(50% - 465px)',
-		// 			slidesToShow: 3,
-		// 		}
-		// 	},
-		// 	{
-		// 		breakpoint: 992,
-		// 		settings: {
-		// 			centerPadding: 'calc(50% - 360px)',
-		// 			slidesToShow: 1,
-		// 		}
-		// 	},
-		// 	{
-		// 		breakpoint: 768,
-		// 		settings: {
-		// 			centerPadding: '40px',
-		// 			slidesToShow: 1,
-		// 		}
-		// 	},
-		// ]
+		responsive: [
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					variableWidth: false,
+					dots: false,
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					variableWidth: false,
+					dots: true,
+				}
+			},
+		]
 	});
 }
 
@@ -52,6 +48,15 @@ if($('.js-about-slider').length){
 		dots: true,
 		prevArrow: '<button id="prev" type="button" class="btn-arr btn-arr_left"><svg class="icon ic-arrow-left ic-stroke" width="10" height="17"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-left"></use></svg></button>',
 		nextArrow: '<button id="next" type="button" class="btn-arr btn-arr_right"><svg class="icon ic-arrow-right ic-stroke" width="10" height="17"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-right"></use></svg></button>',
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					arrows: false,
+					dots: true,
+				}
+			},
+		]
 	});
 }
 
@@ -60,6 +65,15 @@ if($('.js-school-slider').length){
 	$('.js-school-slider').slick({
 		prevArrow: '<button id="prev" type="button" class="btn-arr btn-arr_left"><svg class="icon ic-arrow-left ic-stroke" width="10" height="17"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-left"></use></svg></button>',
 		nextArrow: '<button id="next" type="button" class="btn-arr btn-arr_right"><svg class="icon ic-arrow-right ic-stroke" width="10" height="17"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-right"></use></svg></button>',
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					arrows: false,
+					dots: true,
+				}
+			},
+		]
 	});
 }
 
@@ -72,6 +86,22 @@ if($('.js-instructors-slider').length){
 		appendArrows: $('.js-instructors-slider-arr'),
 		prevArrow: '<button id="prev" type="button" class="btn-arr btn-arr_left"><svg class="icon ic-arrow-left ic-stroke" width="10" height="17"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-left"></use></svg></button>',
 		nextArrow: '<button id="next" type="button" class="btn-arr btn-arr_right"><svg class="icon ic-arrow-right ic-stroke" width="10" height="17"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-right"></use></svg></button>',
+		responsive: [
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				}
+			},
+		// 	{
+		// 		breakpoint: 768,
+		// 		settings: {
+		// 			centerPadding: '40px',
+		// 			slidesToShow: 1,
+		// 		}
+		// 	},
+		]
 	});
 }
 
@@ -80,4 +110,21 @@ if($('.js-scroll-popup-close').length){
 	$('.js-scroll-popup-close').on('click', function() {
 		$(this).closest('.js-scroll-popup').addClass('inactive');
 	});
+}
+
+// Open/Close mobile menu
+if($('.js-open-menu').length){
+	$('.js-open-menu').on('click', function(){
+		$(this).toggleClass('active');
+		$('.js-main-menu').toggleClass('active');
+		$('.js-body').toggleClass('no-scroll');
+	});
+
+	$('.js-main-menu-arr').on('click', function(e){
+		e.preventDefault();
+		$(this).toggleClass('active');
+		$(this).closest('.js-main-menu-item').children('.js-main-menu-sub').slideToggle(300);
+	});
+
+	
 }

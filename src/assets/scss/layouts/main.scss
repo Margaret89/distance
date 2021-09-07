@@ -9,6 +9,12 @@ body{
 
 body{font-size: 1.8rem;}
 
+body.no-scroll{
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}
+
 *,
 *:before,
 *:after {
@@ -199,3 +205,57 @@ button.btn_small{
 }
 
 .clear{clear: both;}
+
+@media (max-width: 991px) {
+	.h1, h1{font-size: 3.8rem;}
+
+	.img-float{
+		margin: 0 40px 40px 0;
+		&_right{margin: 0 0 40px 40px;}
+	}
+
+	main{padding-bottom: 80px;}
+	.last-elem{margin-bottom: -80px;}
+}
+
+@media (max-width: 767px) {
+	.container{max-width: 100%!important;}
+	body{font-size: 1.6rem;}
+	li{margin-bottom: 12px;}
+	p{margin-bottom: 12px;}
+
+	.h1, h1{
+		font-size: 2.6rem;
+		margin-bottom: 3rem;
+	}
+
+	.h2, h2{font-size: 2.2rem;}
+	.h3, h3{font-size: 2rem;}
+
+	.h4, h4{
+		font-size: 1.8rem;
+		font-weight: bold;
+	}
+
+	.h5, h5{
+		font-size: 1.6rem;
+		font-weight: bold;
+	}
+
+	p + .h4, p + h4{margin-top: 3rem;}
+	
+	.btn,
+	input[type="submit"].btn,
+	button.btn{
+		height: 5rem;
+		padding: 0 30px;
+	}
+	
+	.img-float{
+		max-width: none;
+		float: none;
+		margin: 20px 0;
+	}
+
+	.img-float:first-child{margin-top: 0;}
+}

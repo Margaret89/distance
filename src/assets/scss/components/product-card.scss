@@ -57,3 +57,15 @@
 		padding-right: 15px;
 	}
 }
+
+@media (max-width: 991px) {
+	.product-list{margin: 50px 0 80px;}
+}
+
+@media (max-width: 767px) {
+	.product-list{
+		margin: -10px 0 100px;
+
+		&__more{margin-top: -30px;}
+	}
+}

@@ -77,3 +77,62 @@
 		margin-top: 20px;
 	}
 }
+
+@media (max-width: 991px) {
+	.steps-wrap{margin: 120px 0 5px;}
+
+	.steps{
+		[class^='col-']:nth-child(3n + 1){padding-top: 0;}
+		[class^='col-']:nth-child(3n + 2){padding-top: 20px;}
+		[class^='col-']:nth-child(3n + 3){padding-top: 40px;}
+		[class^='col-']:nth-child(3n) &__item:before{display: none;}
+
+		[class^='col-']:nth-child(3n + 1) &__item:before{
+			display: inline-block;
+			background-image: url(/assets/img/curve1.svg);
+			top: 0;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.steps-wrap{
+		margin: 110px 0 5px;
+		.h1, h1{text-align: center;}
+
+		& + .line-site{
+			padding-top: 27px;
+			padding-bottom: 33px;
+		}
+	}
+
+	.steps{
+		[class^="col-"]{padding-top: 0!important;}
+
+		&__item{
+			height: auto;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+
+		&__top{display: block;}
+		&__num{display: none;}
+
+		&__icon{
+			width: 84px;
+			height: 84px;
+
+			.icon{
+				max-width: 40px;
+				max-height: 40px;
+			}
+		}
+
+		&__text{
+			max-width: none;
+			font-size: 1.6rem;
+		}
+
+		&__item::before{display: none!important;}
+	}
+}

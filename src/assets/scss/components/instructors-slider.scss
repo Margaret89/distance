@@ -63,3 +63,36 @@
 
 	&__param:not(:last-child){border-bottom: 1px solid #eee;}
 }
+
+@media (max-width: 767px) {
+	.instructors-slider-wrap{
+		&__top{
+			margin-bottom: 30px;
+			.h1, h1{margin: 0 auto;}
+		}
+	}
+
+	.instructors-slider{
+		&__item{
+			display: block!important;
+			text-align: center;
+			padding: 30px 30px 20px;
+		}
+
+		&__content{padding: 0;}
+
+		&__img{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 140px;
+			height: 140px;
+			border-radius: 50%;
+			margin: 0 auto 20px;
+		}
+
+		.rating{margin-bottom: 18px;}
+		&__name{font-weight: 500;}
+		.slick-dots{bottom: -20px;}
+	}
+}

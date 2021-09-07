@@ -100,3 +100,15 @@
 
 	.header-address{display: none;}
 }
+
+@media (max-width: 767px) {
+	.header{
+		height: 72px;
+		padding: 10px 0;
+
+		&__phone{font-size: 1.6rem;}
+		&__contacts{margin-right: 20px;}
+		&__logo{width: 52px;}
+		.main-menu{margin-top: 0;}
+	}
+}

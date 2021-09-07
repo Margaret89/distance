@@ -99,6 +99,17 @@ block content
 
 				br
 				br
+				br
+				.h2 Нестандартный checkbox
+				.input-check
+					input#check1(type='checkbox')
+					label.input-check__label(for='check1')
+						span.input-check__mark
+							+svg('ic-tick','ic-tick ic-stroke', '10', '8')
+						span.input-check__text Текст
+
+				br
+				br
 				div.h2 Иконки
 				.type-icon
 					.type-icon__item
@@ -155,6 +166,11 @@ block content
 						.type-icon__img
 							+svg('ic-close','ic-close ic-stroke', '15', '15')
 						.type-icon__name ic-close
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-tick','ic-tick ic-stroke', '10', '8')
+						.type-icon__name ic-tick
 
 					.type-icon__item
 						.type-icon__img
