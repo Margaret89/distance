@@ -1,0 +1,53 @@
+/*-------------- contacts -----------------*/
+.contact{
+	margin-bottom: 30px;
+
+	&__top{
+		display: inline-flex;
+		margin-bottom: 17px;
+	}
+
+	&__icon{
+		flex: 0 0 20px;
+		margin-right: 12px;
+
+		.icon{fill: $color-green;}
+	}
+
+	&__title{
+		font-family: $font-prosto;
+		@include font(normal, normal, 2.6rem, 1.2, #000);
+	}
+
+	&__content{
+		@include font(normal, normal, 1.6rem, 1.5, #000);
+
+		p{margin-bottom: 10px;}
+	}
+
+	&__phone{
+		font-size: 2.2rem;
+		font-weight: 500;
+	}
+}
+
+.map{
+	border-radius: 12px;
+	box-shadow: 0px 22px 46px rgba(0, 0, 0, 0.06);
+
+	iframe{
+		border-radius: 12px;
+		max-height: 100%;
+	}
+}
+
+@media (max-width: 991px) {
+	.map{height: 400px;}
+}
+
+@media (max-width: 767px) {
+	.contact{
+		&__title{font-size: 2rem;}
+		&__phone{font-size: 1.8rem;}
+	}
+}

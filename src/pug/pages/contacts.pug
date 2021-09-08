@@ -1,0 +1,57 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Контакты';
+	- var h1 = 'Контакты';
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная страница'},
+			{href:'#',name:'Контакты'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	section.contacts-wrap
+		.container
+			.row
+				.col-md-6.col-lg-4
+					.contact
+						.contact__top
+							.contact__icon
+								+svg('ic-call','ic-call', '20', '20')
+							.contact__title Телефон
+						
+						.contact__content
+							p.contact__phone +7 (812) 389-23-23
+							p Прием звонков: с 8:00 до 22:00
+							p Сб. - Вс. — выходной
+
+				.col-md-6.col-lg-4
+					.contact
+						.contact__top
+							.contact__icon
+								+svg('ic-address','ic-address', '18', '21')
+							.contact__title Адрес
+						
+						.contact__content
+							p 198188, Россия, Санкт-Петербург, ул. Возрождения, 20.
+							p МО №28 «Автово», Кировский район
+
+				.col-md-6.col-lg-4
+					.contact
+						.contact__top
+							.contact__icon
+								+svg('ic-address','ic-address', '18', '21')
+							.contact__title Реквизиты
+						
+						.contact__content
+							p 198188, Россия, Санкт-Петербург, ул. Возрождения, 20.
+							p МО №28 «Автово», Кировский район
+
+			.row
+				.col-12
+					.map
+						iframe(src='https://yandex.ru/map-widget/v1/?um=constructor%3A2a6dae9e0dc1a5efcbeb3442f798e5fd5462fa4aa9fd1bba2ffbb46ea3b83818&source=constructor' width='100%' height='500' frameborder='0')
