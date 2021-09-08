@@ -62,6 +62,16 @@
 	&__more:hover .icon{stroke: $color-green;}
 }
 
+.news-list{
+	.news-item{
+		height: calc(100% - 50px);
+		margin-bottom: 50px;
+		&__img-wrap{padding-bottom: 65%;}
+	}
+
+	.pager{margin-top: 16px;}
+}
+
 @media (max-width: 767px) {
 	.news-wrap{
 		.h1, h1{text-align: center;}

@@ -1,0 +1,56 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Новости';
+	- var h1 = 'Новости';
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная страница'},
+			{href:'#',name:'Новости'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	section.news-list
+		.container
+			.row
+				-
+					var list=[
+						{img:'news4.jpg', title:'Сдача экзаменов ГИБДД по новому регламенту', date:'28.09.2021', size:'big'},
+						{img:'news2.jpg', title:'На площадке при перемещении нужно включать поворотники', date:'28.09.2021'},
+						{img:'news5.jpg', title:'Появилось новое задание — парковка передом...', date:'28.09.2021'},
+						{img:'news6.jpg', title:'Сдача экзаменов ГИБДД по новому регламенту', date:'28.09.2021'},
+						{img:'news7.jpg', title:'Появилось новое задание — парковка передом...', date:'28.09.2021'},
+						{img:'news8.jpg', title:'Сдача экзаменов ГИБДД по новому регламенту', date:'28.09.2021'},
+						{img:'news9.jpg', title:'На площадке при перемещении нужно включать поворотники', date:'28.09.2021'},
+					]
+				each item in list
+					div(class=item.size?'col-md-8':'col-md-4')
+						.news-item
+							a(href="#").news-item__img-wrap
+								.news-item__img(style="background-image: url(assets/img/"+item.img+")")
+
+							.news-item__title
+								a(href="#")= item.title
+
+							.news-item__date= item.date
+
+							a(href="#").news-item__more
+									+svg('ic-arr-right','ic-arr-right ic-stroke', '42', '20')
+
+			.row
+				.col-12
+					.pager
+						a.pager__nav.disable(href="#")
+							+svg('ic-arrow-left','ic-arrow-left ic-stroke', '7', '14')
+
+						a.pager__item.active(href='#') 1
+						a.pager__item(href='#') 2
+						a.pager__item(href='#') 3
+						a.pager__item(href='#') 4
+
+						a.pager__nav(href="#")
+							+svg('ic-arrow-right','ic-arrow-right ic-stroke', '7', '14')
