@@ -1,0 +1,73 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Расписание занятий';
+	- var h1 = 'Расписание занятий';
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная страница'},
+			{href:'#',name:'Расписание занятий'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	section.schedule-wrap
+		.container
+			.row
+				.col-lg-8
+					-
+						var list=[
+							{
+								icon:'ic-sun',
+								title:'Утренняя группа',
+								time:'10:00 — 12:30',
+								days:[
+									'Понедельник',
+									'Вторник',
+									'Среда',
+									'Четверг',
+								]
+							},
+							{
+								icon:'ic-moon',
+								title:'Вечерняя группа',
+								time:'19:00 — 21:30',
+								days:[
+									'Понедельник',
+									'Вторник',
+									'Среда',
+									'Четверг',
+								]
+							},
+							{
+								icon:'ic-smile',
+								title:'Группа выходного дня',
+								time:'11:00 — 15:00',
+								days:[
+									'Суббота',
+								]
+							},
+						]
+					each item in list
+						.schedule
+							.schedule__icon
+								+svg(item.icon, item.icon, '36', '36')
+
+							.schedule__content
+								.schedule__title= item.title
+								.schedule__time
+									+svg('ic-time','ic-time', '20', '20')
+									= item.time
+								.schedule__week
+									each day in item.days
+										.schedule__day= day
+
+				.col-lg-4
+					.info-block
+						.info-block__title Перерыв каждый час — 10 минут
+						.info-block__text Оставьте заявку на нашем сайте или свяжитесь любым удобным для вас способом
+						.info-block__img
+							img(src="assets/img/keys.png", alt="")

@@ -1,0 +1,86 @@
+/*-------------- schedule -----------------*/
+.schedule-wrap{
+	.info-block{height: 100%;}
+}
+
+.schedule{
+	display: flex;
+	padding: 40px;
+	border-radius: 12px;
+	background: #fff;
+
+	&:not(:last-child){margin-bottom: 10px;}
+
+	&__icon{
+		flex: 0 0 36px;
+		width: 36px;
+		margin-right: 16px;
+	}
+
+	&__title{
+		font-family: $font-prosto;
+		@include font(normal, normal, 2.6rem, 1.3, #000);
+	}
+
+	&__time{
+		display: flex;
+		align-items: center;
+		@include font(normal, 500, 2.2rem, 1.2, #000);
+		margin-top: 20px;
+
+		.icon{
+			flex: 0 0 20px;
+			width: 20px;
+			fill: #000;
+			margin-right: 12px;
+		}
+	}
+
+	&__week{
+		display: flex;
+		flex-wrap: wrap;
+		margin: 25px -5px -5px;
+	}
+
+	&__day{
+		display: inline-block;
+		vertical-align: top;
+		border-radius: 6px;
+		background: #f2f2f2;
+		padding: 8px 16px;
+		@include font(normal, normal, 1.6rem, 1, #000);
+		white-space: nowrap;
+		margin: 5px;
+	}
+}
+
+@media (max-width: 991px) {
+	.schedule-wrap{
+		.info-block{
+			height: auto;
+			margin-top: 40px;
+			&__img{display: none;}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.schedule{
+		padding: 20px;
+
+		&__title{font-size: 2rem;}
+
+		&__time{
+			font-size: 1.8rem;
+
+			.icon{
+				flex: 0 0 16px;
+				width: 16px;
+				margin-right: 8px;
+			}
+		}
+
+		&__week{margin-top: 20px;}
+		&__day{font-size: 1.4rem;}
+	}
+}
