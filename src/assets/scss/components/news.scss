@@ -72,6 +72,30 @@
 	.pager{margin-top: 16px;}
 }
 
+.news-detail{
+	margin-top: -30px;
+
+	&__date{
+		@include font(normal, normal, 1.6rem, 1.5, #868686);
+		margin-bottom: 20px;
+
+		.icon{
+			flex: 0 0 22px;
+			width: 22px;
+			vertical-align: top;
+			margin-right: 10px;
+			stroke: #e2e2e2;
+		}
+	}
+
+	&__img{
+		margin-bottom: 20px;
+		img{border-radius: 12px;}
+	}
+
+	&__back{margin-top: 80px;}
+}
+
 @media (max-width: 767px) {
 	.news-wrap{
 		.h1, h1{text-align: center;}
@@ -90,4 +114,6 @@
 			margin-top: 20px;
 		}
 	}
+
+	.news-detail{margin-top: -15px;}
 }

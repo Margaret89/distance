@@ -210,6 +210,7 @@ button.btn_small{
 }
 
 .clear{clear: both;}
+.page-header{max-width: 67%;}
 
 @media (max-width: 991px) {
 	.h1, h1{font-size: 3.8rem;}
@@ -223,6 +224,7 @@ button.btn_small{
 
 	main{padding-bottom: 80px;}
 	.last-elem{margin-bottom: -80px;}
+	.page-header{max-width: none;}
 }
 
 @media (max-width: 767px) {
