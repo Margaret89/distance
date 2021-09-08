@@ -1,0 +1,59 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Сведения об образоавтельной организации';
+	- var h1 = 'Сведения об образоавтельной организации';
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная страница'},
+			{href:'#',name:'Сведения об образоавтельной организации'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	section.unwrap-info-list
+		.container
+			.row
+				.col-12
+					-
+						var list=[
+							{num:'01', title:'Основные сведения'},
+							{num:'02', title:'Структура и органы управления образовательной организацией'},
+							{num:'03', title:'Документы'},
+							{num:'04', title:'Образование'},
+							{num:'05', title:'Руководство. Педагогический (научно-педагогический) состав'},
+							{num:'06', title:'Материально-техническое обеспечение и оснащенность образовательного процесса'},
+							{num:'07', title:'Платные образовательные услуги'},
+							{num:'08', title:'Финансово-хозяйственная деятельность'},
+							{num:'09', title:'Вакантные места для приема (перевода) обучающихся'},
+							{num:'10', title:'Доступная среда'},
+							{num:'11', title:'Международное сотрудничество'},
+						]
+					each item in list
+						.unwrap-info.js-unwrap-block
+							.unwrap-info__head.js-unwrap-head
+								.unwrap-info__title
+									span.unwrap-info__num= item.num
+									= item.title
+								.unwrap-info__btn
+									+svg('ic-plus','ic-plus', '16', '16')
+
+							.unwrap-info__content.js-unwrap-content
+								.unwrap-info__param
+									span.unwrap-info__label Директор:
+									span.unwrap-info__val  Индивидуальный предприниматель Кременцов Илья Васильевич
+
+								.unwrap-info__param
+									span.unwrap-info__label Место нахождение:
+									span.unwrap-info__val  г. Санкт - Петербург, Коломяжский пр., д. 18, лит. А, помещение 92H
+
+								.unwrap-info__param
+									span.unwrap-info__label Эл. почта:
+									span.unwrap-info__val  krementsov1975@gmail.com
+
+								.unwrap-info__param
+									span.unwrap-info__label Телефон:
+									span.unwrap-info__val  8 (905) 263-57-07

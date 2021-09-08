@@ -1,0 +1,78 @@
+/*-------------- unwrap-info -----------------*/
+.unwrap-info{
+	margin-bottom: 10px;
+	border-radius: 12px;
+	background: #fff;
+
+	&__head{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 27px 30px;
+		position:relative;
+		cursor:pointer;
+	}
+
+	&__num{
+		font-family: $font-prosto;
+		@include font(normal, normal, 2.6rem, 1.2, #888);
+		margin-right: 18px;
+	}
+
+	&__title{
+		@include font(normal, 500, 2.2rem, 1.2, #000);
+		transition: color 0.2s ease 0s;
+	}
+
+	&__head:hover &__title{color: $color-green;}
+
+	&__btn{
+		margin-left: 60px;
+		flex: 0 0 16px;
+		width: 16px;
+		
+		.icon{
+			fill: $color-green;
+			transition: all 0.2s ease 0s;
+		}
+	}
+
+	&.opened &__btn .icon{
+		fill: #c2c2c2;
+		transform: rotate(135deg);
+	}
+
+	&__content{
+		display: none;
+		padding: 7px 30px 26px;
+		@include font(normal, normal, 1.6rem, 1.5, #000);
+
+		p:last-child{margin-bottom: 0;}
+	}
+
+	&__param:not(:last-child){margin-bottom: 12px;}
+	&__label{font-weight: bold;}
+}
+
+@media (max-width: 991px) {
+	.unwrap-info{
+		&__btn{margin-left: 20px;}
+	}
+}
+
+@media (max-width: 767px) {
+	.unwrap-info{
+		&__head{padding: 20px;}
+		&__title{font-size: 1.8rem;}
+
+		&__num{
+			font-size: 2rem;
+			margin-right: 10px;
+		}
+
+		&__content{
+			font-size: 1.6rem;
+			padding: 7px 20px 20px;
+		}
+	}
+}
