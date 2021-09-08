@@ -1,0 +1,60 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Тарифы и цены';
+	- var h1 = 'Тарифы и цены';
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная страница'},
+			{href:'#',name:'Тарифы и цены'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	section.tariffs-list
+		.container
+			.row
+				-
+					var list=[
+						{
+							img:'tariff1.jpg',
+							label:'Тариф',
+							title:'«Онлайн»',
+							text:'Отличная программа для тех, кто ценит свое время и обладает базовыми навыками вождения',
+						},
+						{
+							img:'tariff2.jpg',
+							label:'Тариф',
+							title:'«Классический»',
+							text:'Отличная программа для новичков в мире вождения',
+						},
+						{
+							img:'tariff3.jpg',
+							label:'Тариф',
+							title:'«Премиальный»',
+							text:'Отличная программа для тех, кто привык получать максимум',
+							size:'big'
+						},
+						
+					]
+				each item in list
+					div(class=item.size?'col-12':'col-xl-6')
+						.tariff(style="background-image: url(assets/img/"+item.img+")")
+							.tariff__content
+								.tariff__info
+									.tariff__label= item.label
+									.tariff__title= item.title
+									.tariff__text= item.text
+
+								.tariff__bottom
+									.tariff__price
+										.tariff__old-price 22 640 &#8381;
+										.tariff__cur-price 18 900 &#8381;
+
+									a.btn.btn_border(href='#')
+										span.btn__content
+											span Подробнее
+											+svg('ic-arr-right','ic-arr-right ic-stroke', '24', '24')

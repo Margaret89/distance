@@ -168,6 +168,14 @@ button.btn_small{
 	padding: 0 24px;
 }
 
+.btn{
+	.icon:first-child{margin-right: 5px;}
+	.icon:last-child{margin-left: 5px;}
+	.icon{transition: fill 0.2s ease 0s, stroke 0.2s ease 0s;}
+	&:hover .icon{fill: #fff;}
+	&:hover .ic-stroke{stroke: #fff;}
+}
+
 .code{
 	background-color: #f7f7f7;
 	border: 1px solid #e1e1e8;
