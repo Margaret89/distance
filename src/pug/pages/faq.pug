@@ -1,0 +1,40 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Часто задаваемые вопросы';
+	- var h1 = 'Часто задаваемые вопросы';
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная страница'},
+			{href:'#',name:'Часто задаваемые вопросы'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	section.faq
+		.container
+			.row
+				.col-md-8
+					-
+						var list=[
+							{title:'Экзамен сдается в ГИБДД на ш. Революции дом 85?', text:'Текст'},
+							{title:'Если я прописан(а) в Лен. области или в другом городе России, экзамен в ГИБДД я могу сдавать в Санкт-Петербурге?', text:'По законодательству, вы можете сдавать экзамены в ГИБДД в любом субъекте Российской Федерации имея паспорт гражданина России.'},
+							{title:'В автошколу на обучение принимаются иностранные граждане?', text:'Текст'},
+							{title:'Какой промежуток времени между окончанием автошколы и сдачей экзаменов в ГИБДД?', text:'Текст'},
+							{title:'Экзамен сдается в ГИБДД на ш. Революции дом 85?', text:'Текст'},
+							{title:'В автошколу на обучение принимаются иностранные граждане?', text:'Текст'},
+						]
+					each item in list
+						.unwrap-block.js-unwrap-block
+							.unwrap-block__head.js-unwrap-head
+								.unwrap-block__title= item.title
+								.unwrap-block__btn
+									+svg('ic-arror-down-thin','ic-arror-down-thin ic-stroke', '20', '10')
+
+							.unwrap-block__content.js-unwrap-content= item.text
+				
+				.col-4.d-none.d-md-block
+					img(src="assets/img/man.png", alt="")
